@@ -53,3 +53,10 @@ def delete_item(item_id: int) -> None:
             del _items[i]
             return
     raise HTTPException(status_code=404, detail="Item not found")
+
+@app.get("/api/items/{item_id}")
+def get_one_item(item_id: int)-> Item:
+    for i, item in enumerate(_items):
+        if item.id == item_id:
+            return _items[i]
+    raise HTTPException(status_code=404, detail="Item not found")
