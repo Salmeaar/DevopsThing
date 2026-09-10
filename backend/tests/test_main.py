@@ -36,3 +36,15 @@ def test_delete_item() -> None:
 def test_delete_missing_item_returns_404() -> None:
     response = client.delete("/api/items/999999")
     assert response.status_code == 404
+
+def test_get_one_item() -> None:
+    created = client.post("/api/items", json={"text": "temporary"}).json()
+    
+    response = client.get(f"/api/items/{created['id']}")
+    assert response.status_code == 200
+    assert response.json()["id"] == created["id"]
+    assert response.json()["text"] == created["text"]
+
+def test_get_one_item_return_404() -> None:
+    response = client.get("/api/items/9999999")
+    assert response.status_code == 404
