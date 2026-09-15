@@ -1,5 +1,14 @@
+:root {
+  --bg: #f4f1ea;
+  --fg: #222;
+  --accent: #b3541e;
+  --border: #ddd;
+}
+
 body {
   font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
   max-width: 32rem;
   margin: 2rem auto;
   padding: 0 1rem;
@@ -30,5 +39,5 @@ li {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border);
 }
