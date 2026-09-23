@@ -6,7 +6,6 @@ understand a complex domain model first.
 """
 from __future__ import annotations
 
-#import json # oanvänd -ruff gnäller
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
