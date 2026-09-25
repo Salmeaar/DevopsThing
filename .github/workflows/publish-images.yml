@@ -85,7 +85,7 @@ jobs:
       - name: Record image tags
         run: |
           {
-            echo "### Taggar för det här bygget"}
-            echo "-/`ghcr.io/${{ steps.owner.outputs.owner }}/template-app-frontend:latest\`"
+            echo "### Taggar för det här bygget"
+            echo "- \`ghcr.io/${{ steps.owner.outputs.owner }}/template-app-frontend:latest\`"
             echo "- \`ghcr.io/${{ steps.owner.outputs.owner }}/template-app-frontend:${{ github.sha }}\`"
           } >> "$GITHUB_STEP_SUMMARY"
